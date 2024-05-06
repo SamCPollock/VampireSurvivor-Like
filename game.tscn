@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b817rnanu77fp"]
+[gd_scene load_steps=7 format=3 uid="uid://b817rnanu77fp"]
 
 [ext_resource type="PackedScene" uid="uid://dosivbx0xdctj" path="res://player.tscn" id="1_aepm2"]
 [ext_resource type="Texture2D" uid="uid://3nuqo7dl8ssl" path="res://Assets/Backgrounds/Tilesets/TilesetField.png" id="2_dq3ab"]
 [ext_resource type="PackedScene" uid="uid://dcl4hqfqtddb4" path="res://cat_enemy.tscn" id="3_y7w00"]
+[ext_resource type="PackedScene" uid="uid://dp5rkfwepaocb" path="res://enemy_spawner.tscn" id="4_swie4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk4pc"]
 texture = ExtResource("2_dq3ab")
@@ -107,3 +108,6 @@ position = Vector2(-182, 60)
 
 [node name="Enemy5" parent="." instance=ExtResource("3_y7w00")]
 position = Vector2(81, 41)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_swie4")]
+enemy_to_spawn = ExtResource("3_y7w00")

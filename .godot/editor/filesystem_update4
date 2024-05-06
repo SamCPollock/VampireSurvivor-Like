@@ -4,3 +4,5 @@ res://cat_enemy.tscn
 res://projectile.tscn
 res://projectile.gd
 res://cat_enemy.gd
+res://EnemySpawner.gd
+res://enemy_spawner.tscn
