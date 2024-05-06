@@ -23,3 +23,7 @@ func handle_movement():
 	velocity = direction * speed
 	move_and_slide()
 
+
+func _on_collection_radius_body_entered(body):
+	if(body.has_method("collect")):
+		body.collect()

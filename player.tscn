@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dosivbx0xdctj"]
+[gd_scene load_steps=6 format=3 uid="uid://dosivbx0xdctj"]
 
 [ext_resource type="Texture2D" uid="uid://b8tdnyn48e3ae" path="res://Assets/Actor/Characters/Caveman/SpriteSheet.png" id="1_jqjmq"]
 [ext_resource type="Script" path="res://player.gd" id="1_nsagr"]
@@ -7,7 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_68e5m"]
 radius = 7.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_h7sr1"]
+radius = 37.3363
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_nsagr")
 axe_scene = ExtResource("2_uwiyp")
@@ -20,3 +23,11 @@ region_rect = Rect2(2, 2, 12, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_68e5m")
+
+[node name="CollectionRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionRadius"]
+shape = SubResource("CircleShape2D_h7sr1")
+
+[connection signal="area_entered" from="CollectionRadius" to="." method="_on_collection_radius_area_entered"]
+[connection signal="body_entered" from="CollectionRadius" to="." method="_on_collection_radius_body_entered"]

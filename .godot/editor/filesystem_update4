@@ -6,3 +6,6 @@ res://projectile.gd
 res://cat_enemy.gd
 res://EnemySpawner.gd
 res://enemy_spawner.tscn
+res://player.gd
+res://coin.tscn
+res://coin.gd
