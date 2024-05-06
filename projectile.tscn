@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ur7lhn3wbluy"]
+
+[ext_resource type="Texture2D" uid="uid://263wl1ydn7uu" path="res://Assets/Items/Weapons/Axe/Sprite.png" id="1_ngutx"]
+[ext_resource type="Script" path="res://projectile.gd" id="1_ona5x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypiy2"]
+
+[node name="Axe" type="RigidBody2D"]
+collision_layer = 4
+max_contacts_reported = 8
+contact_monitor = true
+script = ExtResource("1_ona5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ypiy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("1_ngutx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

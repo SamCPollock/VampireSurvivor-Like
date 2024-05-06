@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcl4hqfqtddb4"]
+
+[ext_resource type="Texture2D" uid="uid://lf8rfi3vs2dx" path="res://Assets/Actor/Animals/Cat/SpriteSheet.png" id="1_2uhil"]
+[ext_resource type="Script" path="res://cat_enemy.gd" id="1_ppww8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf1xv"]
+radius = 7.07107
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_ppww8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2uhil")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xf1xv")

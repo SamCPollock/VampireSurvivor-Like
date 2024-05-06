@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dosivbx0xdctj"]
+
+[ext_resource type="Texture2D" uid="uid://b8tdnyn48e3ae" path="res://Assets/Actor/Characters/Caveman/SpriteSheet.png" id="1_jqjmq"]
+[ext_resource type="Script" path="res://player.gd" id="1_nsagr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68e5m"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nsagr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_jqjmq")
+region_enabled = true
+region_rect = Rect2(2, 2, 12, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_68e5m")
